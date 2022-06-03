@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         button2.setOnClickListener(this)
         button3.setOnClickListener(this)
         button4.setOnClickListener(this)
-        //editText1.setOnClickListener(this)
+        editText1.setOnClickListener(this)
     }
     @SuppressLint("SetTextI18n")
     override fun onClick(v: View) {
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } catch (e : Exception) {
         } finally {
             if (editText1.text.toString()=="") {
-                //editText2.text = "何か数値を入力してください"
+                //editText1.text = "何か数値を入力してください"
             }
             if (editText2.text.toString()=="") {
                 //editText2.text = "何か数値を入力してください"
