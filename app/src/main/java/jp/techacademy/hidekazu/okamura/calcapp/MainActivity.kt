@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Intent
+import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +34,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } catch (e : Exception) {
         } finally {
             if (editText1.text.toString()=="") {
-                //editText1.text = "何か数値を入力してください"
-            }
-            if (editText2.text.toString()=="") {
-                //editText2.text = "何か数値を入力してください"
+                val snackbar = Snackbar.make(v , "1つ目未入力", Snackbar.LENGTH_LONG)
+                snackbar.show()
+            } else if (editText2.text.toString()=="") {
+                val snackbar = Snackbar.make(v , "2つ目未入力", Snackbar.LENGTH_LONG)
+                snackbar.show()
             }
         }
     }
