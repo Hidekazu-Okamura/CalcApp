@@ -14,10 +14,10 @@ class SecondActivity : AppCompatActivity() {
         val value2 = intent.getIntExtra("VALUE2", 0)
         val status = intent.getIntExtra("STATUS", 0)
         when ("$status") {
-            1.toString() -> ans = (value1 + value2).toDouble()
-            2.toString() -> ans = (value1 - value2).toDouble()
-            3.toString() -> ans = (value1 * value2).toDouble()
-            4.toString() -> ans = (value1 / value2).toDouble()
+            1.toString() -> ans = value1.toDouble() + value2.toDouble()
+            2.toString() -> ans = value1.toDouble() - value2.toDouble()
+            3.toString() -> ans = value1.toDouble() * value2.toDouble()
+            4.toString() -> ans = value1.toDouble() / value2.toDouble()
         }
         textView.text = ans.toString()
 
