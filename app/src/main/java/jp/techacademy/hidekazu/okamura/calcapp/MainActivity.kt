@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import android.content.Intent
+import android.util.Log
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -22,8 +23,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         val intent = Intent(this, SecondActivity::class.java)
         try {
-            intent.putExtra("VALUE1", Integer.parseInt(editText1.text.toString()))
-            intent.putExtra("VALUE2", Integer.parseInt(editText2.text.toString()))
+            intent.putExtra("VALUE1", editText1.text.toString())
+            intent.putExtra("VALUE2", editText2.text.toString())
             when(v.id){
                 R.id.button1 -> intent.putExtra("STATUS", 1)
                 R.id.button2 -> intent.putExtra("STATUS", 2)
@@ -31,7 +32,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 R.id.button4 -> intent.putExtra("STATUS", 4)
             }
             startActivity(intent)
+            Log.d("kotlintest", editText1.text.toString())
+            Log.d("kotlintest", editText2.text.toString())
         } catch (e : Exception) {
+            Log.d("kotlintest", e.message.toString())
         } finally {
             if (editText1.text.toString()=="") {
                 val snackbar = Snackbar.make(v , "1つ目未入力", Snackbar.LENGTH_LONG)
